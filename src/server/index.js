@@ -1,10 +1,10 @@
 /** @format */
 
 import Express from 'express';
+import Compression from 'compression';
 import Config from './config/config';
 
 const app = Express();
-const router = Express.Router();
 
 if (process.env.NODE_ENV !== 'production ') {
   /**
@@ -29,11 +29,9 @@ if (process.env.NODE_ENV !== 'production ') {
   app.use(require('webpack-hot-middleware')(compiler));
 }
 
+app.use(Compression());
+
 app.use(Express.static('public'));
-
-router.get('/', (req, res) => res.render('index.html'));
-
-app.use('/', router);
 
 app.listen(Config.port, () => {
   console.log(`Running app on ${Config.port}`);
