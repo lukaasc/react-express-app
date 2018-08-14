@@ -3,10 +3,18 @@
 extends:
   - airbnb
   - prettier
+  - plugin:jest/recommended
 plugins:
   - prettier
+  - jest
 globals:
   document: true
+  shallow: true
+  render: true
+  mount: true
+env:
+  node: true
+  jest/globals: true
 rules:
   prettier/prettier: error
   newline-after-var:

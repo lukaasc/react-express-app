@@ -11,7 +11,7 @@ if (process.env.NODE_ENV !== 'production ') {
    * Imports for React HMR
    */
   const webpack = require('webpack');
-  const webpackConfig = require('../../webpack.config');
+  const webpackConfig = require('../../_config/webpack.config');
   const compiler = webpack(
     webpackConfig({
       development: true
@@ -34,5 +34,5 @@ app.use(Compression());
 app.use(Express.static('public'));
 
 app.listen(Config.port, () => {
-  console.log(`Running app on ${Config.port}`);
+  console.log(`Running app on ${Config.port}`); //eslint-disable-line
 });

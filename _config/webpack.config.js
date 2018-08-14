@@ -10,7 +10,7 @@ module.exports = env => {
   return {
     ...baseConfig,
     output: {
-      path: path.resolve(__dirname, 'public'),
+      path: path.resolve(__dirname, '../public'),
       publicPath: '/',
       filename: '[name].bundle-[hash].js',
       chunkFilename: '[name].bundle-[hash].js'
@@ -41,7 +41,12 @@ module.exports = env => {
               }
             },
             {
-              loader: 'postcss-loader'
+              loader: 'postcss-loader',
+              options: {
+                config: {
+                  path: path.resolve(__dirname)
+                }
+              }
             }
           ]
         },
