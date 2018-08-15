@@ -1,5 +1,5 @@
 # @format
-
+parser: babel-eslint
 extends:
   - airbnb
   - prettier

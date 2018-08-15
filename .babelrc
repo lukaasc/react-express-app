@@ -1,17 +1,14 @@
 {
-    "presets": [
-      "react",
-      [
-        "env",
-        {
-          "targets": {
-            "node": "current"
-          }
+  "presets": [
+    "@babel/react",
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "node": "current"
         }
-      ]
-    ],
-    "plugins": [
-      "transform-object-rest-spread",
-      "array-includes"
+      }
     ]
+  ],
+  "plugins": ["@babel/plugin-proposal-object-rest-spread", ["@babel/plugin-proposal-decorators", { "legacy": true }], "array-includes"]
 }

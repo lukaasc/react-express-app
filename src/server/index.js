@@ -2,6 +2,8 @@
 
 import Express from 'express';
 import Compression from 'compression';
+import bodyParser from 'body-parser';
+
 import Config from './config/config';
 
 const app = Express();
@@ -30,6 +32,12 @@ if (process.env.NODE_ENV !== 'production ') {
 }
 
 app.use(Compression());
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
 
 app.use(Express.static('public'));
 
