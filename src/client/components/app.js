@@ -11,9 +11,17 @@ export default class App extends React.PureComponent {
   }
 
   async componentDidMount() {
-    this.setState({
-      greet: await Promise.resolve('App')
-    });
+    try {
+      const response = await fetch('/api/greet');
+
+      if (response.status !== 200) throw new Error('Error on API call');
+
+      this.setState({
+        greet: await response.text()
+      });
+    } catch ({ message }) {
+      console.log(message); //eslint-disable-line
+    }
   }
 
   render() {

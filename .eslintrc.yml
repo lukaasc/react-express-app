@@ -12,6 +12,7 @@ globals:
   shallow: true
   render: true
   mount: true
+  fetch: true
 env:
   node: true
   jest/globals: true
