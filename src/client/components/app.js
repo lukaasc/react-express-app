@@ -1,8 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { inject, observer } from 'mobx-react';
+
+import SampleStore from '../stores/sample-store';
 
 import './app.scss';
 
-export default class App extends React.PureComponent {
+@inject('sampleStore')
+@observer
+export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -12,6 +18,7 @@ export default class App extends React.PureComponent {
 
   async componentDidMount() {
     try {
+      const { sampleStore } = this.props;
       const response = await fetch('/api/greet');
 
       if (response.status !== 200) throw new Error('Error on API call');
@@ -19,6 +26,8 @@ export default class App extends React.PureComponent {
       this.setState({
         greet: await response.text()
       });
+
+      setInterval(() => sampleStore.tick(), 1000);
     } catch ({ message }) {
       console.log(message); //eslint-disable-line
     }
@@ -26,12 +35,19 @@ export default class App extends React.PureComponent {
 
   render() {
     const { greet } = this.state;
+    const { sampleStore } = this.props;
 
     return (
       <div>
-        <h1>React / Node.js - {greet}</h1>
+        <h1>
+          React / Node.js - {greet} - {sampleStore.counter.value}
+        </h1>
         <h2>Boilerplate </h2>
       </div>
     );
   }
 }
+
+App.propTypes = {
+  sampleStore: PropTypes.instanceOf(SampleStore)
+};

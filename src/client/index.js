@@ -1,15 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Favicon from 'react-favicon';
+import { Provider } from 'mobx-react';
 
+import Favicon from 'react-favicon';
 import faviconImage from './assets/images/favicon.png';
 
 import App from './components/app';
+import SampleStore from './stores/sample-store';
+
+const sampleStore = new SampleStore();
 
 ReactDOM.render(
   <div>
     <Favicon url={faviconImage} />
-    <App />
+
+    <Provider sampleStore={sampleStore}>
+      <App />
+    </Provider>
   </div>,
   document.getElementById('root')
 );
