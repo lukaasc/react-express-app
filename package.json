@@ -69,6 +69,7 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-favicon": "^0.0.14",
+    "react-router-dom": "^4.3.1",
     "rimraf": "^2.6.2",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",
