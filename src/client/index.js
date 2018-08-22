@@ -5,16 +5,15 @@ import { Provider } from 'mobx-react';
 import Favicon from 'react-favicon';
 import faviconImage from './assets/images/favicon.png';
 
-import App from './components/app';
-import SampleStore from './stores/sample-store';
+import StoreInitializer from './stores';
 
-const sampleStore = new SampleStore();
+import App from './components/app';
 
 ReactDOM.render(
   <div>
     <Favicon url={faviconImage} />
 
-    <Provider sampleStore={sampleStore}>
+    <Provider {...StoreInitializer.initialize()}>
       <App />
     </Provider>
   </div>,

@@ -40,7 +40,7 @@ export default class App extends React.Component {
     return (
       <div>
         <h1>
-          React / Node.js - {greet} - {sampleStore.counter.value}
+          React / Node.js - {greet} - {sampleStore.counter}
         </h1>
         <h2>Boilerplate </h2>
       </div>

@@ -24,6 +24,7 @@ rules:
   newline-before-return: error
   linebreak-style: off
   global-require: off
+  no-plusplus: off
   react/jsx-filename-extension: off
   react/jsx-one-expression-per-line: off
   react/require-default-props: off

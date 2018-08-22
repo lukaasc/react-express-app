@@ -2,12 +2,10 @@ import { observable, action } from 'mobx';
 
 export default class SampleStore {
   @observable
-  counter = {
-    value: 0
-  };
+  counter = 0;
 
   @action
   tick() {
-    this.counter.value += 1;
+    this.counter++;
   }
 }
