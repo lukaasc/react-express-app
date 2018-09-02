@@ -4,6 +4,8 @@ import express from 'express';
 import compression from 'compression';
 import bodyParser from 'body-parser';
 
+import config from './config/config';
+
 class Bootstrap {
   constructor() {
     this.app = express();
@@ -53,7 +55,11 @@ class Bootstrap {
   }
 
   setupPublicFolder() {
-    this.app.use(express.static('public'));
+    const {
+      cache: { maxAge }
+    } = config;
+
+    this.app.use(express.static('public', { maxage: maxAge }));
 
     return this;
   }

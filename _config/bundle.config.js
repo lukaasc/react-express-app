@@ -7,17 +7,15 @@ module.exports = {
     mode: 'development',
     devtool: 'eval-source-map',
     entry: {
-      vendor: ['react', 'react-dom', hotMiddlewareScript],
-      app: ['@babel/polyfill', './src/client/index.js', hotMiddlewareScript]
+      app: ['./src/client/index.js', hotMiddlewareScript]
     },
     plugins: [new webpack.HotModuleReplacementPlugin()]
   },
   prod: {
     mode: 'production',
     entry: {
-      vendor: ['react', 'react-dom'],
-      app: ['@babel/polyfill', './src/client/index.js']
+      app: ['./src/client/index.js']
     },
-    plugins: []
+    plugins: [new webpack.HashedModuleIdsPlugin()]
   }
 };

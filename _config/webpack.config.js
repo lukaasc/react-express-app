@@ -12,8 +12,8 @@ module.exports = env => {
     output: {
       path: path.resolve(__dirname, '../public'),
       publicPath: '/',
-      filename: '[name].bundle-[hash].js',
-      chunkFilename: '[name].bundle-[hash].js'
+      filename: env.production ? '[name].bundle-[contentHash].js' : '[name].bundle-[hash].js',
+      chunkFilename: env.production ? '[name].bundle-[contentHash].js' : '[name].bundle-[hash].js'
     },
     module: {
       rules: [
@@ -62,17 +62,16 @@ module.exports = env => {
       ]
     },
     optimization: {
+      runtimeChunk: true,
       splitChunks: {
         cacheGroups: {
           vendor: {
-            chunks: 'initial',
             name: 'vendor',
-            test: 'vendor',
-            enforce: true
+            chunks: 'all',
+            test: /node_modules/
           }
         }
-      },
-      runtimeChunk: true
+      }
     },
     plugins: [
       new HtmlWebpackPlugin({
