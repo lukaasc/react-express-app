@@ -1,4 +1,6 @@
-import Config from './config/config';
+import path from 'path';
+
+import config from './config/config';
 import app from './bootstrap';
 
 /* routes */
@@ -10,6 +12,9 @@ import apiRoute from './routes/api';
 app
   .build()
   .use('/api', apiRoute)
-  .listen(Config.port, () => {
-    console.log(`Running app on ${Config.port}`); //eslint-disable-line
+  .get('*', (req, res) => {
+    res.sendFile(path.resolve(`${__dirname}/../../public/index.html`));
+  })
+  .listen(config.port, () => {
+    console.log(`Running app on ${config.port}`); //eslint-disable-line
   });

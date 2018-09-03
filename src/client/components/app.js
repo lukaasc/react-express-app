@@ -8,7 +8,7 @@ import './app.scss';
 
 @inject('sampleStore')
 @observer
-export default class App extends React.Component {
+class App extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -51,3 +51,5 @@ export default class App extends React.Component {
 App.propTypes = {
   sampleStore: PropTypes.instanceOf(SampleStore)
 };
+
+export default App;
