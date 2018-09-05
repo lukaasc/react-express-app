@@ -30,7 +30,8 @@ class Bootstrap {
       this.app
         .use(
           require('webpack-dev-middleware')(compiler, {
-            noInfo: true
+            noInfo: true,
+            writeToDisk: filePath => /index\.html$/.test(filePath)
           })
         )
         .use(require('webpack-hot-middleware')(compiler));

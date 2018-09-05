@@ -23,7 +23,7 @@ module.exports = env => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: ['@babel/react', '@babel/env']
+              presets: ['@babel/react', ['@babel/env', { targets: { browsers: ['last 2 versions', 'not ie < 11'] }, useBuiltIns: 'usage' }]]
             }
           }
         },
