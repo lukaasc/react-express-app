@@ -31,7 +31,7 @@ yarn start
 
 **or**
 
-```
+```sh
 cd react-express-app
 npm install
 npm start
@@ -44,7 +44,7 @@ npm start
  > **or**
  > `npm install pm2 -g`
 
-```
+```sh
 cd react-express-app
 yarn install
 yarn build
@@ -53,7 +53,7 @@ yarn start-prod
 
 **or**
 
-```
+```sh
 cd react-express-app
 npm install
 npm run build
