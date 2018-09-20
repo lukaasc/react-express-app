@@ -1,6 +1,6 @@
 # React & Express.js Boilerplate
 
-> **Note:** this project is meant for modern browsers only, thus, it won't work on IE due to some dependecies like MobX v5+. You would need to manually downgrade the version if you need IE support.
+> **Note:** this project is meant for modern browsers only, thus, it won't work on IE due to some dependencies like MobX v5+. You would need to manually downgrade the version if you need IE support.
 
 ## Built-in Support
 
