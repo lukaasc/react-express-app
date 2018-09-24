@@ -35,9 +35,9 @@
     "css-loader": "^1.0.0",
     "eslint": "5.6.0",
     "eslint-config-airbnb": "17.1.0",
-    "eslint-config-prettier": "^3.0.1",
+    "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-jest": "^21.22.0",
+    "eslint-plugin-jest": "^21.22.1",
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "7.11.1",
@@ -63,7 +63,6 @@
     "jest": "^23.6.0",
     "mobx": "^5.1.2",
     "mobx-react": "^5.2.8",
-    "pm2": "^3.1.2",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -71,8 +70,8 @@
     "react-router-dom": "^4.3.1",
     "rimraf": "^2.6.2",
     "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.0",
+    "webpack-cli": "^3.1.1",
     "webpack-dev-middleware": "^3.3.0",
-    "webpack-hot-middleware": "^2.24.0"
+    "webpack-hot-middleware": "^2.24.2"
   }
 }
