@@ -7,8 +7,10 @@ const sampleStore = new SampleStore();
 
 describe('<App />', () => {
   it('renders the <App /> component', () => {
-    const wrapper = shallow(<App sampleStore={sampleStore} />);
+    const wrapper = shallow(<App sampleStore={sampleStore} />).dive();
 
     expect(wrapper.exists()).toBeTruthy();
+    expect(wrapper.state().greet).toBeDefined();
+    expect(wrapper.instance().props.sampleStore).toBeInstanceOf(SampleStore);
   });
 });
